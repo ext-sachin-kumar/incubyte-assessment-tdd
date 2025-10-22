@@ -1,0 +1,6 @@
+example_id                                                  | status | run_time        |
+----------------------------------------------------------- | ------ | --------------- |
+./spec/string_calculator/string_calculator_spec.rb[1:1:1]   | passed | 0.00027 seconds |
+./spec/string_calculator/string_calculator_spec.rb[1:1:2:1] | passed | 0.00004 seconds |
+./spec/string_calculator/string_calculator_spec.rb[1:1:2:2] | passed | 0.00003 seconds |
+./spec/string_calculator/string_calculator_spec.rb[1:1:2:3] | passed | 0.00003 seconds |
