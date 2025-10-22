@@ -1,7 +1,6 @@
 class StringCalculator
   def self.add(numbers)
-    return 0 if numbers.nil?
-    return 0 if numbers.empty?
+    return 0 if numbers.nil? || numbers.empty?
     delimiters = [",", "\n"]
 
     tempNumbers = [numbers]
@@ -13,9 +12,7 @@ class StringCalculator
 
     delimiters.each do |d| 
       temp = []
-      tempNumbers.each do |t|
-        temp.concat(t.split(d))
-      end
+      tempNumbers.each { |t| temp.concat(t.split(d)) }
       tempNumbers = temp
     end
     tempNumbers = tempNumbers.map(&:to_i)
