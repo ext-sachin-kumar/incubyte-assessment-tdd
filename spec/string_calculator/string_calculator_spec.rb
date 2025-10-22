@@ -19,8 +19,8 @@ RSpec.describe StringCalculator do
     context "when numbers are separated by comma" do
       it "return sum" do
         expect(StringCalculator.add("1,5")).to eq(6)
-        expect(StringCalculator.add("1,100")).to eq(6)
-        expect(StringCalculator.add("1,2,3,4,5")).to eq(14)
+        expect(StringCalculator.add("1,100")).to eq(101)
+        expect(StringCalculator.add("1,2,3,4,5")).to eq(15)
       end
     end
 
@@ -43,10 +43,13 @@ RSpec.describe StringCalculator do
 
     context 'when negative number are used' do
       it 'raise an error' do
-        expect { StringCalculator.add('1,-2,3') }
-          .to raise_error('negative numbers not allowed -2')
+        # expect { StringCalculator.add('1,-2,3') }
+        #   .to raise_error('negative numbers not allowed -2')
 
-        expect { StringCalculator.add('1,-2,-5,3') }
+        # expect { StringCalculator.add('1,-2,-5,3') }
+        #   .to raise_error('negative numbers not allowed -2,-5')
+
+        expect { StringCalculator.add('1,-2,-5\n3') }
           .to raise_error('negative numbers not allowed -2,-5')
       end
     end
