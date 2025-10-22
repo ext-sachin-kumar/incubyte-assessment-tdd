@@ -5,6 +5,12 @@ class StringCalculator
     delimiters = [",", "\n"]
 
     tempNumbers = [numbers]
+
+    if numbers.start_with?('//')
+      start, numbers = numbers.split("\n", 2)
+      delimiters = [(start[2..])]
+    end
+
     delimiters.each do |d| 
       temp = []
       tempNumbers.each do |t|
@@ -13,8 +19,6 @@ class StringCalculator
       tempNumbers = temp
     end
     tempNumbers = tempNumbers.map(&:to_i)
-    puts '___'
-    puts tempNumbers
 
     negativeNumbers = tempNumbers.select { |n| n < 0 }
 
